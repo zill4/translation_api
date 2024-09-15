@@ -12,3 +12,441 @@
 2024-09-15 07:30:30,228 - __main__ - INFO - Attempting to start Flask app on port 5000
 2024-09-15 07:30:30,228 - __main__ - INFO - App instance: <Flask 'main'>
 2024-09-15 07:30:30,228 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f94cd38beb0>
+2024-09-15 10:08:17,409 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:08:17,411 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:08:17,411 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:08:17,449 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:08:17,449 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/main.py", line 186, in <module>
+    create_app()
+  File "/home/jcrisp/code/translation_api/main.py", line 177, in create_app
+    db.create_all()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:08:52,572 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:08:52,572 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:08:52,572 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:08:52,581 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:08:52,581 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/main.py", line 186, in <module>
+    create_app()
+  File "/home/jcrisp/code/translation_api/main.py", line 177, in create_app
+    db.create_all()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:38:28,808 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:38:28,809 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:38:28,809 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:38:28,830 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:38:28,830 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/main.py", line 186, in <module>
+    create_app()
+  File "/home/jcrisp/code/translation_api/main.py", line 177, in create_app
+    db.create_all()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:45:05,373 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:45:05,373 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:45:05,373 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:45:05,385 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:45:05,385 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/code/translation_api/main.py", line 186, in <module>
+    create_app()
+  File "/home/jcrisp/code/translation_api/main.py", line 177, in create_app
+    db.create_all()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/code/translation_api/venv/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 10:50:12,858 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:50:12,858 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:50:12,858 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:50:13,548 - __main__ - INFO - Database tables created successfully
+2024-09-15 10:50:13,548 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 10:50:13,548 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 10:50:13,548 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7faba112fd90>
+2024-09-15 10:50:13,841 - __main__ - INFO - Starting Flask app...
+2024-09-15 10:50:13,841 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 10:50:13,841 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 10:50:13,857 - __main__ - INFO - Database tables created successfully
+2024-09-15 10:50:13,858 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 10:50:13,858 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 10:50:13,858 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f1ccecf3df0>

@@ -1,0 +1,14 @@
+2024-09-15 07:30:29,439 - __main__ - INFO - Starting Flask app...
+2024-09-15 07:30:29,439 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 07:30:29,439 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 07:30:29,863 - __main__ - INFO - Database tables created successfully
+2024-09-15 07:30:29,863 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 07:30:29,863 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 07:30:29,863 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f345f073c40>
+2024-09-15 07:30:30,227 - __main__ - INFO - Starting Flask app...
+2024-09-15 07:30:30,227 - __main__ - INFO - Current working directory: /home/jcrisp/code/translation_api
+2024-09-15 07:30:30,227 - __main__ - INFO - Contents of current directory: ['.gitignore', 'README.md', 'utils.py', 'venv', 'pyproject.toml', 'poetry.lock', '.git', 'main.py', 'models.py', 'database.py', 'instance', '__pycache__', 'app.log', 'translation_service.py', '.env', 'config.py']
+2024-09-15 07:30:30,228 - __main__ - INFO - Database tables created successfully
+2024-09-15 07:30:30,228 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 07:30:30,228 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 07:30:30,228 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f94cd38beb0>

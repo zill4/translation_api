@@ -11,6 +11,10 @@ from models import User, Message
 from translation_service import translation_service
 from utils import detect_language
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
+
+# Load env var
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')

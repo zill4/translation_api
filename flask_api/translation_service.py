@@ -1,21 +1,43 @@
-import random
+import pika
+import json
+import uuid
+from config import Config
 
-class MockTranslationService:
-    @staticmethod
-    def translate(text, source_lang, source_dialect, target_lang, target_dialect):
-        # This is a mock translation service that simulates Llama 3 8b responses
-        # In a real implementation, this would call the Llama 3 8b API
-        
-        # Simulate translation by adding some random characters to the original text
-        translated_text = text + ' ' + ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k=5))
-        
-        return {
-            'original_text': text,
-            'translated_text': translated_text,
-            'source_lang': source_lang,
-            'source_dialect': source_dialect,
-            'target_lang': target_lang,
-            'target_dialect': target_dialect
-        }
+class TranslationServiceClient:
+    def __init__(self):
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=Config.RABBITMQ_HOST))
+        self.channel = self.connection.channel()
 
-translation_service = MockTranslationService()
+        result = self.channel.queue_declare(queue='', exclusive=True)
+        self.callback_queue = result.method.queue
+
+        self.response = None
+        self.corr_id = None
+
+        self.channel.basic_consume(
+            queue=self.callback_queue,
+            on_message_callback=self.on_response,
+            auto_ack=True
+        )
+
+    def on_response(self, ch, method, props, body):
+        if self.corr_id == props.correlation_id:
+            self.response = json.loads(body)
+
+    def translate(self, text, target_language):
+        self.response = None
+        self.corr_id = str(uuid.uuid4())
+
+        self.channel.basic_publish(
+            exchange='',
+            routing_key='llm_queue',
+            properties=pika.BasicProperties(
+                reply_to=self.callback_queue,
+                correlation_id=self.corr_id
+            ),
+            body=json.dumps({'text': text, 'target_language': target_language})
+        )
+
+        while self.response is None:
+            self.connection.process_data_events()
+        return self.response.get('response', '')

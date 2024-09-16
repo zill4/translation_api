@@ -6,3 +6,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'jwt-secret-string')
     RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST', 'localhost')
+
+    # Additional configurations can be added here

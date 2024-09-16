@@ -1,5 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from extensions import db
 
-db = SQLAlchemy()
 migrate = Migrate()

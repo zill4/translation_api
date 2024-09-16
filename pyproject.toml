@@ -1,17 +1,19 @@
 [tool.poetry]
-name = "repl-nix-translinguachat"
+name = "translation-api"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "building understanding"
+authors = ["zill4 <justcrisp@outook.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-flask = "^3.0.3"
+python = "^3.10"
 flask-sqlalchemy = "^3.1.1"
 flask-socketio = "^5.3.7"
 flask-login = "^0.6.3"
 psycopg2-binary = "^2.9.9"
+werkzeug = "^3.0.4"
+python-dotenv = "^1.0.1"
+flask = "^3.0.3"
 
 
 [build-system]

@@ -450,3 +450,1269 @@ connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  passw
 2024-09-15 10:50:13,858 - __main__ - INFO - Attempting to start Flask app on port 5000
 2024-09-15 10:50:13,858 - __main__ - INFO - App instance: <Flask 'main'>
 2024-09-15 10:50:13,858 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f1ccecf3df0>
+2024-09-15 19:26:14,501 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:26:14,501 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:26:14,501 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:26:14,501 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:26:14,501 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:26:14,501 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:26:14,502 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f85a55338b0>
+2024-09-15 19:26:14,856 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:26:14,856 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:26:14,856 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:26:14,856 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:26:14,856 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:26:14,856 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:26:14,857 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f686cb6bbe0>
+2024-09-15 19:26:14,874 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:26:14,874 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:38:47,410 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:38:47,411 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:38:47,411 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:38:47,411 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:38:47,411 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:38:47,411 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:38:47,411 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7fe0346338b0>
+2024-09-15 19:38:47,763 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:38:47,763 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:38:47,763 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:38:47,763 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:38:47,763 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:38:47,763 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:38:47,763 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7fbdb1989d80>
+2024-09-15 19:38:47,780 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:38:47,781 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:40:21,919 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:40:21,919 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:40:21,919 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:40:21,919 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:40:21,919 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:40:21,919 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:40:21,920 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f66ffb4f8b0>
+2024-09-15 19:40:22,264 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:40:22,264 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:40:22,264 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:40:22,264 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:40:22,265 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:40:22,265 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:40:22,265 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7fce91079d80>
+2024-09-15 19:40:22,273 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:40:22,273 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:40:44,058 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:40:44,058 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:40:44,058 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:40:44,058 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:40:44,058 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:40:44,058 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:40:44,059 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f5302169d20>
+2024-09-15 19:40:44,067 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:40:44,067 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:46:30,343 - __main__ - INFO - Starting Flask app...
+2024-09-15 19:46:30,344 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 19:46:30,344 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 19:46:30,344 - __main__ - INFO - Database tables created successfully
+2024-09-15 19:46:30,344 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 19:46:30,344 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 19:46:30,344 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f397ec0dd20>
+2024-09-15 19:46:30,361 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 19:46:30,361 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:00:21,717 - __main__ - INFO - Starting Flask app...
+2024-09-15 20:00:21,718 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 20:00:21,718 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 20:00:21,718 - __main__ - INFO - Database tables created successfully
+2024-09-15 20:00:21,719 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 20:00:21,719 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 20:00:21,719 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7fad9edadd20>
+2024-09-15 20:00:21,728 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:00:21,728 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:01:16,256 - __main__ - INFO - Starting Flask app...
+2024-09-15 20:01:16,257 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 20:01:16,257 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 20:01:16,257 - __main__ - INFO - Database tables created successfully
+2024-09-15 20:01:16,257 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 20:01:16,257 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 20:01:16,257 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f2e12fd1d20>
+2024-09-15 20:01:16,266 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:01:16,266 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:02:23,988 - __main__ - INFO - Starting Flask app...
+2024-09-15 20:02:23,989 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 20:02:23,989 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 20:02:23,989 - __main__ - INFO - Database tables created successfully
+2024-09-15 20:02:23,989 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 20:02:23,989 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 20:02:23,989 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f548d3b5d20>
+2024-09-15 20:02:23,996 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:02:23,996 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:13:29,665 - __main__ - INFO - Starting Flask app...
+2024-09-15 20:13:29,665 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 20:13:29,665 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 20:13:29,665 - __main__ - INFO - Database tables created successfully
+2024-09-15 20:13:29,665 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 20:13:29,665 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 20:13:29,665 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f4a3ea65d20>
+2024-09-15 20:13:29,673 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:13:29,673 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 68, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "jcrisp"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:16:26,163 - __main__ - INFO - Starting Flask app...
+2024-09-15 20:16:26,163 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 20:16:26,163 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 20:16:26,163 - __main__ - INFO - Database tables created successfully
+2024-09-15 20:16:26,163 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 20:16:26,163 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 20:16:26,163 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f5d3d039d20>
+2024-09-15 20:16:26,182 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 20:16:26,182 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 66, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+connection to server at "localhost" (127.0.0.1), port 5432 failed: FATAL:  password authentication failed for user "bob"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 21:05:51,669 - __main__ - INFO - Starting Flask app...
+2024-09-15 21:05:51,669 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 21:05:51,669 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 21:05:51,669 - __main__ - INFO - Database tables created successfully
+2024-09-15 21:05:51,669 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 21:05:51,669 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 21:05:51,669 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f3e08201d20>
+2024-09-15 21:05:51,670 - __main__ - ERROR - An error occurred while starting the Flask app: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 21:05:51,670 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 66, in <module>
+    db.create_all()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/sql/schema.py", line 5868, in create_all
+    bind._run_ddl_visitor(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3252, in _run_ddl_visitor
+    with self.begin() as conn:
+  File "/usr/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3242, in begin
+    with self.connect() as conn:
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3278, in connect
+    return self._connection_cls(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2442, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 3302, in raw_connection
+    return self.pool.connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 621, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-09-15 21:06:29,718 - __main__ - INFO - Starting Flask app...
+2024-09-15 21:06:29,718 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 21:06:29,718 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 21:06:29,718 - __main__ - INFO - Database tables created successfully
+2024-09-15 21:06:29,718 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 21:06:29,718 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 21:06:29,718 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7fe55d5a9d20>
+2024-09-15 21:06:30,151 - __main__ - INFO - Starting Flask app...
+2024-09-15 21:06:30,151 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 21:06:30,151 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 21:06:30,151 - __main__ - INFO - Database tables created successfully
+2024-09-15 21:06:30,151 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 21:06:30,151 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 21:06:30,151 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f8585809d80>
+2024-09-15 21:08:18,354 - __main__ - ERROR - An error occurred while starting the Flask app: [Errno 9] Bad file descriptor
+2024-09-15 21:08:18,355 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 69, in <module>
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_socketio/__init__.py", line 656, in run
+    app.run(host=host, port=port, threaded=True,
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask/app.py", line 625, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 1091, in run_simple
+    srv = make_server(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 928, in make_server
+    return ThreadedWSGIServer(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 790, in __init__
+    self.socket = socket.fromfd(fd, address_family, socket.SOCK_STREAM)
+  File "/usr/lib/python3.10/socket.py", line 545, in fromfd
+    nfd = dup(fd)
+OSError: [Errno 9] Bad file descriptor
+2024-09-15 21:08:18,850 - __main__ - INFO - Starting Flask app...
+2024-09-15 21:08:18,850 - __main__ - INFO - Current working directory: /home/jcrisp/projects/translation_api
+2024-09-15 21:08:18,850 - __main__ - INFO - Contents of current directory: ['database.py', 'models.py', 'README.md', '.env', 'translation_service.py', '.git', 'docker-compose.yml', 'main.py', 'config.py', 'schemas.py', '__pycache__', 'instance', 'poetry.lock', 'app.log', '.gitignore', 'routes.py', 'setup.bat', 'setup.sh', 'pyproject.toml', 'utils.py']
+2024-09-15 21:08:18,850 - __main__ - INFO - Database tables created successfully
+2024-09-15 21:08:18,850 - __main__ - INFO - Attempting to start Flask app on port 5000
+2024-09-15 21:08:18,850 - __main__ - INFO - App instance: <Flask 'main'>
+2024-09-15 21:08:18,850 - __main__ - INFO - SocketIO instance: <flask_socketio.SocketIO object at 0x7f9bc2c51d80>
+2024-09-15 21:08:27,186 - __main__ - ERROR - An error occurred while starting the Flask app: [Errno 9] Bad file descriptor
+2024-09-15 21:08:27,186 - __main__ - ERROR - Exception details:
+Traceback (most recent call last):
+  File "/home/jcrisp/projects/translation_api/main.py", line 69, in <module>
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask_socketio/__init__.py", line 656, in run
+    app.run(host=host, port=port, threaded=True,
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/flask/app.py", line 625, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 1091, in run_simple
+    srv = make_server(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 928, in make_server
+    return ThreadedWSGIServer(
+  File "/home/jcrisp/.cache/pypoetry/virtualenvs/translation-api-sD0OP-ZY-py3.10/lib/python3.10/site-packages/werkzeug/serving.py", line 790, in __init__
+    self.socket = socket.fromfd(fd, address_family, socket.SOCK_STREAM)
+  File "/usr/lib/python3.10/socket.py", line 545, in fromfd
+    nfd = dup(fd)
+OSError: [Errno 9] Bad file descriptor

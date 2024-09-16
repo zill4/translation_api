@@ -2,3 +2,4 @@
 *.db
 venv/
 flask_api/venv/
+flask_api/__pycache__

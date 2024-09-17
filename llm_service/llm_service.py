@@ -1,7 +1,7 @@
 import pika
 import json
 import os
-from ollama import OllamaClient
+from ollama import Client
 
 # RabbitMQ connection parameters
 rabbitmq_host = os.environ.get('RABBITMQ_HOST', 'localhost')
@@ -13,17 +13,26 @@ channel.queue_declare(queue='llm_queue')
 def on_request(ch, method, props, body):
     message = json.loads(body.decode())
     input_text = message.get('text', '')
+    target_language = message.get('target_language', 'en')
 
-    # Process input with Llama3
-    ollama_client = OllamaClient()
-    response = ollama_client.generate(model='llama3', prompt=input_text)
+    # Process input with Llama3 using Ollama Client
+    client = Client(host='http://localhost:11434')
+    response = client.chat(model='dolphin-llama3', messages=[
+        {
+            'role': 'user',
+            'content': 'translate this to ' + 'Mexican Spanish' + ': ' + input_text,
+        },
+    ])
+
+    # Extract the response content
+    response_content = response['choices'][0]['message']['content']
 
     # Send response back
     ch.basic_publish(
         exchange='',
         routing_key=props.reply_to,
-        properties=pika.BasicProperties(correlation_id = props.correlation_id),
-        body=json.dumps({'response': response})
+        properties=pika.BasicProperties(correlation_id=props.correlation_id),
+        body=json.dumps({'response': response_content})
     )
     ch.basic_ack(delivery_tag=method.delivery_tag)
 

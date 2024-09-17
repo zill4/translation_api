@@ -12,9 +12,6 @@ RUN apt-get update && apt-get install -y \
 RUN curl -o ollama.sh https://ollama.ai/install.sh && \
     bash ollama.sh
 
-# Install Llama3 model
-RUN ollama pull llama3
-
 # Set work directory
 WORKDIR /app
 
@@ -24,8 +21,19 @@ COPY . /app
 # Install Python packages
 RUN pip3 install -r requirements.txt
 
+# Ensure python3 is in PATH
+ENV PATH="/usr/bin:${PATH}"
+
 # Expose port (if necessary)
 EXPOSE 6000
 
-# Run the LLM service
-CMD ["python3", "llm_service.py"]
+# Create a startup script
+RUN echo '#!/bin/bash\n\
+ollama serve &\n\
+sleep 20\n\
+ollama pull dolphin-llama3\n\
+python3 llm_service.py' > /app/start.sh && \
+    chmod +x /app/start.sh
+
+# Run the startup script
+CMD ["/app/start.sh"]

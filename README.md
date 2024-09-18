@@ -1,6 +1,6 @@
 # translation_api
 the world on the same page
-(made this public, gonna have to change the keys'n env stuff now)
+
 ## Setup
 1. Clone the repository
 2. run `docker-compose up --build`

@@ -21,7 +21,7 @@ def create_app(config_class=Config):
     socketio.init_app(app, cors_allowed_origins="*", async_mode='eventlet')
 
     # Initialize Flask-RESTX
-    api = Api(app, version='1.0', title='Translation API', description='A simple translation API')
+    api = Api(app, version='1.0', title='Translation API', description='meow meow meow => hi hello world')
 
     # Register routes
     register_routes(app, api)

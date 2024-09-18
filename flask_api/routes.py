@@ -1,4 +1,4 @@
-from flask import jsonify, request, current_app
+from flask import jsonify, request
 from flask_restx import Api, Resource, fields
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
 from models import User, Message, Contact
@@ -9,10 +9,9 @@ from schemas import (
 )
 from extensions import db, socketio, login_manager
 from flask_socketio import emit, join_room
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user
 from translation_service import TranslationServiceClient
 from sqlalchemy import or_
-import os
 
 translation_client = TranslationServiceClient()
 
@@ -32,8 +31,8 @@ def register_routes(app, api):
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    # User CRUD Routes
-    @api.route('/api/users')
+    # User Routes
+    @api.route('/users')
     class UserResource(Resource):
         @api.expect(user_model)
         @api.response(201, 'User created successfully')
@@ -56,196 +55,221 @@ def register_routes(app, api):
             access_token = create_access_token(identity=new_user.id)
             return {"access_token": access_token}, 201
 
-    @app.route('/api/users/<int:user_id>', methods=['GET'])
-    @jwt_required()
-    def get_user(user_id):
-        user = User.query.get_or_404(user_id)
-        return user_schema.jsonify(user), 200
+    @api.route('/users/<int:user_id>')
+    class UserDetail(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def get(self, user_id):
+            """Get a user by ID"""
+            user = User.query.get_or_404(user_id)
+            return user_schema.jsonify(user)
 
-    @app.route('/api/users/<int:user_id>', methods=['PUT'])
-    @jwt_required()
-    def update_user(user_id):
-        data = request.get_json()
-        user = User.query.get_or_404(user_id)
+        @api.doc(security='jwt')
+        @jwt_required()
+        @api.expect(user_model)
+        def put(self, user_id):
+            """Update a user"""
+            data = request.get_json()
+            user = User.query.get_or_404(user_id)
 
-        if user.id != get_jwt_identity():
-            return jsonify({"message": "Unauthorized"}), 403
+            if user.id != get_jwt_identity():
+                return {"message": "Unauthorized"}, 403
 
-        user.username = data.get('username', user.username)
-        user.email = data.get('email', user.email)
-        user.language = data.get('language', user.language)
-        user.dialect = data.get('dialect', user.dialect)
-        user.location = data.get('location', user.location)
-        user.profile_picture = data.get('profile_picture', user.profile_picture)
-        db.session.commit()
-        return user_schema.jsonify(user), 200
+            user.username = data.get('username', user.username)
+            user.email = data.get('email', user.email)
+            user.language = data.get('language', user.language)
+            user.dialect = data.get('dialect', user.dialect)
+            user.location = data.get('location', user.location)
+            user.profile_picture = data.get('profile_picture', user.profile_picture)
+            db.session.commit()
+            return user_schema.jsonify(user)
 
-    @app.route('/api/users/<int:user_id>', methods=['DELETE'])
-    @jwt_required()
-    def delete_user(user_id):
-        user = User.query.get_or_404(user_id)
+        @api.doc(security='jwt')
+        @jwt_required()
+        def delete(self, user_id):
+            """Delete a user"""
+            user = User.query.get_or_404(user_id)
 
-        if user.id != get_jwt_identity():
-            return jsonify({"message": "Unauthorized"}), 403
+            if user.id != get_jwt_identity():
+                return {"message": "Unauthorized"}, 403
 
-        db.session.delete(user)
-        db.session.commit()
-        return jsonify({"message": "User deleted"}), 200
+            db.session.delete(user)
+            db.session.commit()
+            return {"message": "User deleted"}
 
     # Authentication Routes
+    @api.route('/login')
+    class Login(Resource):
+        @api.expect(api.model('Login', {
+            'username': fields.String(required=True),
+            'password': fields.String(required=True)
+        }))
+        def post(self):
+            """User login"""
+            data = request.get_json()
+            username = data.get('username', '').strip()
+            password = data.get('password', '').strip()
 
-    @app.route('/api/login', methods=['POST'])
-    def login():
-        data = request.get_json()
-        username = data.get('username', '').strip()
-        password = data.get('password', '').strip()
+            user = User.query.filter_by(username=username).first()
+            if user and user.check_password(password):
+                login_user(user)
+                access_token = create_access_token(identity=user.id)
+                return {"access_token": access_token}, 200
 
-        user = User.query.filter_by(username=username).first()
-        if user and user.check_password(password):
-            login_user(user)
-            access_token = create_access_token(identity=user.id)
-            return jsonify(access_token=access_token), 200
+            return {"message": "Invalid credentials"}, 401
 
-        return jsonify({"message": "Invalid credentials"}), 401
+    @api.route('/logout')
+    class Logout(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def post(self):
+            """User logout"""
+            logout_user()
+            return {"message": "Logged out successfully"}
 
-    @app.route('/api/logout', methods=['POST'])
-    @jwt_required()
-    def logout():
-        logout_user()
-        return jsonify({"message": "Logged out successfully"}), 200
+    # Contacts Routes
+    @api.route('/contacts')
+    class ContactList(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def post(self):
+            """Create a new contact"""
+            data = request.get_json()
+            contact_username = data.get('username', '').strip()
+            user_id = get_jwt_identity()
 
-    # Contacts CRUD Routes
+            contact_user = User.query.filter_by(username=contact_username).first()
+            if not contact_user:
+                return {"message": "User not found"}, 404
 
-    @app.route('/api/contacts', methods=['POST'])
-    @jwt_required()
-    def create_contact():
-        data = request.get_json()
-        contact_username = data.get('username', '').strip()
-        user_id = get_jwt_identity()
+            existing_contact = Contact.query.filter_by(owner_id=user_id, contact_id=contact_user.id).first()
+            if existing_contact:
+                return {"message": "Contact already exists"}, 400
 
-        contact_user = User.query.filter_by(username=contact_username).first()
-        if not contact_user:
-            return jsonify({"message": "User not found"}), 404
+            new_contact = Contact(owner_id=user_id, contact_id=contact_user.id)
+            db.session.add(new_contact)
+            db.session.commit()
 
-        existing_contact = Contact.query.filter_by(owner_id=user_id, contact_id=contact_user.id).first()
-        if existing_contact:
-            return jsonify({"message": "Contact already exists"}), 400
+            return contact_schema.jsonify(new_contact), 201
 
-        new_contact = Contact(owner_id=user_id, contact_id=contact_user.id)
-        db.session.add(new_contact)
-        db.session.commit()
+        @api.doc(security='jwt')
+        @jwt_required()
+        def get(self):
+            """Get all contacts for the current user"""
+            user_id = get_jwt_identity()
+            contacts = Contact.query.filter_by(owner_id=user_id).all()
+            return contacts_schema.jsonify(contacts)
 
-        return contact_schema.jsonify(new_contact), 201
+    @api.route('/contacts/<int:contact_id>')
+    class ContactDetail(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def delete(self, contact_id):
+            """Delete a contact"""
+            user_id = get_jwt_identity()
+            contact = Contact.query.filter_by(owner_id=user_id, contact_id=contact_id).first_or_404()
 
-    @app.route('/api/contacts', methods=['GET'])
-    @jwt_required()
-    def get_contacts():
-        user_id = get_jwt_identity()
-        contacts = Contact.query.filter_by(owner_id=user_id).all()
-        return contacts_schema.jsonify(contacts), 200
+            db.session.delete(contact)
+            db.session.commit()
+            return {"message": "Contact deleted"}
 
-    @app.route('/api/contacts/<int:contact_id>', methods=['DELETE'])
-    @jwt_required()
-    def delete_contact(contact_id):
-        user_id = get_jwt_identity()
-        contact = Contact.query.filter_by(owner_id=user_id, contact_id=contact_id).first_or_404()
+    # Messages Routes
+    @api.route('/messages')
+    class MessageList(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def post(self):
+            """Create a new message"""
+            data = request.get_json()
+            sender_id = get_jwt_identity()
+            receiver_id = data.get('receiver_id')
+            content = data.get('content')
 
-        db.session.delete(contact)
-        db.session.commit()
-        return jsonify({"message": "Contact deleted"}), 200
+            message = Message(sender_id=sender_id, receiver_id=receiver_id)
+            message.encrypt_content(content)
+            db.session.add(message)
+            db.session.commit()
 
-    # Messages CRUD Routes
+            translated_content = translation_client.translate(content, 'en')
+            message.translated_content = translated_content
+            message.translated = True
+            db.session.commit()
 
-    @app.route('/api/messages', methods=['POST'])
-    @jwt_required()
-    def create_message():
-        data = request.get_json()
-        sender_id = get_jwt_identity()
-        receiver_id = data.get('receiver_id')
-        content = data.get('content')
+            socketio.emit('receive_message', message_schema.dump(message), room=str(receiver_id))
 
-        message = Message(sender_id=sender_id, receiver_id=receiver_id)
-        message.encrypt_content(content)
-        db.session.add(message)
-        db.session.commit()
+            return message_schema.jsonify(message), 201
 
-        # Translate the message asynchronously
-        # ... Translation logic here ...
-        translated_content = translation_client.translate(content, 'en')  # Example: translating to English
-        message.translated_content = translated_content
-        message.translated = True
-        db.session.commit()
-        # Emit the message to the receiver's room
-        socketio.emit('receive_message', message_schema.dump(message), room=str(receiver_id))
+        @api.doc(security='jwt')
+        @jwt_required()
+        def get(self):
+            """Get messages for a specific contact"""
+            user_id = get_jwt_identity()
+            contact_id = request.args.get('contact_id', type=int)
+            if not contact_id:
+                return {"message": "Contact ID required"}, 400
 
-        return message_schema.jsonify(message), 201
+            messages = Message.query.filter(
+                ((Message.sender_id == user_id) & (Message.receiver_id == contact_id)) |
+                ((Message.sender_id == contact_id) & (Message.receiver_id == user_id))
+            ).order_by(Message.timestamp.asc()).all()
 
-    @app.route('/api/messages/<int:message_id>', methods=['GET'])
-    @jwt_required()
-    def get_message(message_id):
-        message = Message.query.get_or_404(message_id)
-        # Decrypt message before sending
-        message.content = message.decrypt_content()
-        return message_schema.jsonify(message), 200
+            for msg in messages:
+                msg.content = msg.decrypt_content()
 
-    @app.route('/api/messages', methods=['GET'])
-    @jwt_required()
-    def get_messages():
-        user_id = get_jwt_identity()
-        contact_id = request.args.get('contact_id', type=int)
-        if not contact_id:
-            return jsonify({"message": "Contact ID required"}), 400
+            return messages_schema.jsonify(messages)
 
-        messages = Message.query.filter(
-            ((Message.sender_id == user_id) & (Message.receiver_id == contact_id)) |
-            ((Message.sender_id == contact_id) & (Message.receiver_id == user_id))
-        ).order_by(Message.timestamp.asc()).all()
+    @api.route('/messages/<int:message_id>')
+    class MessageDetail(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def get(self, message_id):
+            """Get a specific message"""
+            message = Message.query.get_or_404(message_id)
+            message.content = message.decrypt_content()
+            return message_schema.jsonify(message)
 
-        # Decrypt messages before sending
-        for msg in messages:
-            msg.content = msg.decrypt_content()
+        @api.doc(security='jwt')
+        @jwt_required()
+        def delete(self, message_id):
+            """Delete a message"""
+            user_id = get_jwt_identity()
+            message = Message.query.get_or_404(message_id)
 
-        return messages_schema.jsonify(messages), 200
+            if message.sender_id != user_id:
+                return {"message": "Unauthorized"}, 403
 
-    @app.route('/api/messages/<int:message_id>', methods=['DELETE'])
-    @jwt_required()
-    def delete_message(message_id):
-        user_id = get_jwt_identity()
-        message = Message.query.get_or_404(message_id)
-
-        if message.sender_id != user_id:
-            return jsonify({"message": "Unauthorized"}), 403
-
-        db.session.delete(message)
-        db.session.commit()
-        return jsonify({"message": "Message deleted"}), 200
+            db.session.delete(message)
+            db.session.commit()
+            return {"message": "Message deleted"}
 
     # User Settings Routes
+    @api.route('/settings')
+    class UserSettings(Resource):
+        @api.doc(security='jwt')
+        @jwt_required()
+        def get(self):
+            """Get user settings"""
+            user_id = get_jwt_identity()
+            user = User.query.get_or_404(user_id)
+            return user_schema.jsonify(user)
 
-    @app.route('/api/settings', methods=['PUT'])
-    @jwt_required()
-    def update_settings():
-        user_id = get_jwt_identity()
-        user = User.query.get_or_404(user_id)
+        @api.doc(security='jwt')
+        @jwt_required()
+        @api.expect(user_model)
+        def put(self):
+            """Update user settings"""
+            user_id = get_jwt_identity()
+            user = User.query.get_or_404(user_id)
 
-        data = request.get_json()
-        user.language = data.get('language', user.language)
-        user.dialect = data.get('dialect', user.dialect)
-        user.location = data.get('location', user.location)
-        user.profile_picture = data.get('profile_picture', user.profile_picture)
-        db.session.commit()
-        return user_schema.jsonify(user), 200
-
-    @app.route('/api/settings', methods=['GET'])
-    @jwt_required()
-    def get_settings():
-        user_id = get_jwt_identity()
-        user = User.query.get_or_404(user_id)
-        return user_schema.jsonify(user), 200
-    api.add_resource(UserResource, '/api/users')
+            data = request.get_json()
+            user.language = data.get('language', user.language)
+            user.dialect = data.get('dialect', user.dialect)
+            user.location = data.get('location', user.location)
+            user.profile_picture = data.get('profile_picture', user.profile_picture)
+            db.session.commit()
+            return user_schema.jsonify(user)
 
     # SocketIO Events
-
     @socketio.on('connect')
     @jwt_required()
     def connect():
@@ -265,25 +289,20 @@ def register_routes(app, api):
         db.session.add(message)
         db.session.commit()
 
-        # Translation logic can be added here
-    # Translate the message asynchronously
-        translated_content = translation_client.translate(content, 'en')  # Example: translating to English
+        translated_content = translation_client.translate(content, 'en')
         message.translated_content = translated_content
         message.translated = True
         db.session.commit()
-        # Emit the message to the receiver's room
+
         emit('receive_message', message_schema.dump(message), room=str(receiver_id))
-    
-    @app.route('/api/user/profile', methods=['GET', 'PUT'])
-    @jwt_required()
-    def user_profile():
-        user_id = get_jwt_identity()
-        user = User.query.get(user_id)
-        if request.method == 'GET':
-            return user_schema.dump(user), 200
-        elif request.method == 'PUT':
-            data = request.get_json()
-            user.language = data.get('language', user.language)
-            db.session.commit()
-            return user_schema.dump(user), 200
-    # ... Additional routes and logic as needed ...
+
+    # Add resources to API
+    api.add_resource(UserResource, '/api/users')
+    api.add_resource(UserDetail, '/api/users/<int:user_id>')
+    api.add_resource(Login, '/api/login')
+    api.add_resource(Logout, '/api/logout')
+    api.add_resource(ContactList, '/api/contacts')
+    api.add_resource(ContactDetail, '/api/contacts/<int:contact_id>')
+    api.add_resource(MessageList, '/api/messages')
+    api.add_resource(MessageDetail, '/api/messages/<int:message_id>')
+    api.add_resource(UserSettings, '/api/settings')

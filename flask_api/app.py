@@ -28,5 +28,5 @@ app = create_app()
 
 if __name__ == '__main__':
     print("Starting the Flask application")
-    print("App listening on port 5000")
-    socketio.run(app, host='0.0.0.0', port=5000)
+    print("App listening on port 5001")
+    socketio.run(app, host='0.0.0.0', port=5001)

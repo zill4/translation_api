@@ -1,5 +1,6 @@
 # translation_api
 the world on the same page
+(made this public, gonna have to change the keys'n env stuff now)
 ## Setup
 1. Clone the repository
 2. run `docker-compose up --build`
@@ -9,8 +10,6 @@ the world on the same page
 have fun
 
 ***
-To connect to the database via Docker.
-`docker exec -it translation_api-db-1  psql -U jcrisp -d ai_service_db`
 (If you have errors with auth on postgres make sure the local version is not interfering with the docker container version)
 
 TODO:

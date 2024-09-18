@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_restx import Api
 from config import Config
 from extensions import db, ma, migrate, jwt, login_manager, socketio
 from models import User, Message, Contact
@@ -19,8 +20,11 @@ def create_app(config_class=Config):
     login_manager.init_app(app)
     socketio.init_app(app, cors_allowed_origins="*", async_mode='eventlet')
 
+    # Initialize Flask-RESTX
+    api = Api(app, version='1.0', title='Translation API', description='A simple translation API')
+
     # Register routes
-    register_routes(app)
+    register_routes(app, api)
 
     return app
 

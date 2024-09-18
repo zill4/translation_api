@@ -1,4 +1,5 @@
 from flask import jsonify, request, current_app
+from flask_restx import Api, Resource, fields
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
 from models import User, Message, Contact
 from schemas import (
@@ -8,38 +9,52 @@ from schemas import (
 )
 from extensions import db, socketio, login_manager
 from flask_socketio import emit, join_room
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, current_user, login_required
 from translation_service import TranslationServiceClient
 from sqlalchemy import or_
 import os
 
 translation_client = TranslationServiceClient()
 
-def register_routes(app):
+def register_routes(app, api):
+    # Define API models
+    user_model = api.model('User', {
+        'username': fields.String(required=True, description='User username'),
+        'email': fields.String(required=True, description='User email'),
+        'password': fields.String(required=True, description='User password'),
+        'language': fields.String(description='User preferred language'),
+        'dialect': fields.String(description='User preferred dialect'),
+        'location': fields.String(description='User location'),
+        'profile_picture': fields.String(description='User profile picture URL')
+    })
 
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
 
     # User CRUD Routes
+    @api.route('/api/users')
+    class UserResource(Resource):
+        @api.expect(user_model)
+        @api.response(201, 'User created successfully')
+        @api.response(400, 'Username or email already exists')
+        def post(self):
+            """Create a new user"""
+            data = request.get_json()
+            username = data.get('username', '').strip()
+            email = data.get('email', '').strip()
+            password = data.get('password', '').strip()
 
-    @app.route('/api/users', methods=['POST'])
-    def create_user():
-        data = request.get_json()
-        username = data.get('username', '').strip()
-        email = data.get('email', '').strip()
-        password = data.get('password', '').strip()
+            if User.query.filter(or_(User.username == username, User.email == email)).first():
+                return {"message": "Username or email already exists"}, 400
 
-        if User.query.filter(or_(User.username == username, User.email == email)).first():
-            return jsonify({"message": "Username or email already exists"}), 400
+            new_user = User(username=username, email=email)
+            new_user.set_password(password)
+            db.session.add(new_user)
+            db.session.commit()
 
-        new_user = User(username=username, email=email)
-        new_user.set_password(password)
-        db.session.add(new_user)
-        db.session.commit()
-
-        access_token = create_access_token(identity=new_user.id)
-        return jsonify(access_token=access_token), 201
+            access_token = create_access_token(identity=new_user.id)
+            return {"access_token": access_token}, 201
 
     @app.route('/api/users/<int:user_id>', methods=['GET'])
     @jwt_required()
@@ -227,6 +242,7 @@ def register_routes(app):
         user_id = get_jwt_identity()
         user = User.query.get_or_404(user_id)
         return user_schema.jsonify(user), 200
+    api.add_resource(UserResource, '/api/users')
 
     # SocketIO Events
 
